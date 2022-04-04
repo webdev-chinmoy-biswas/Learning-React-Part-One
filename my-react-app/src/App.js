@@ -1,17 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {useState} from "react";
 const userName = ["aiman", "sadik", "minhaz", "tamim"]
 
 function App() {
   return (
     <div className="App">
-      {
-        userName.map(name => <BoxCard name={name}></BoxCard>)
-      }
+      <Counter></Counter>
     </div>
   )
 }
+
+function Counter() {
+  const [number, setNumber] = useState(0)
+  
+  const addNumber = ()=> {
+    let add = number + 1;
+    setNumber(add)
+  }
+
+  const minusNumber = ()=> {
+    let minus = number - 1;
+    setNumber(minus)
+  }
+
+  return (
+    <div>
+      <h2> Number: {number}</h2>
+    <button onClick={addNumber}>Add Number</button>
+    <button onClick={minusNumber}>Minus Number</button>
+    </div>
+  )
+}
+
 
  function BoxCard(props) {
   console.log(props)
