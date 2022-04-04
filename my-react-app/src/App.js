@@ -14,15 +14,9 @@ function App() {
 function Counter() {
   const [number, setNumber] = useState(0)
   
-  const addNumber = ()=> {
-    let add = number + 1;
-    setNumber(add)
-  }
+  const addNumber = ()=> setNumber (number + 1)
 
-  const minusNumber = ()=> {
-    let minus = number - 1;
-    setNumber(minus)
-  }
+  const minusNumber = ()=> setNumber (number - 1)
 
   return (
     <div>
